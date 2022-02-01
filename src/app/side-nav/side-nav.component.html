@@ -16,36 +16,40 @@
     </div>
   </div>
 
-  <ng-container *ngFor="let hl of headerList; first as isFirst">
-    <div mat-subheader class="sub-header if" [class]="isFirst?'':'mt-3'">{{hl.header.display}}</div>
-    <ng-container *ngFor="let hlc of hl.links">
-      <a class="fs-13" mat-line [routerLink]="hlc.url" (click)="onNavItemClick()">
-        <mat-list-item [routerLinkActive]="'link-active'">
-          <mat-icon mat-list-icon>{{hlc.iconName}}</mat-icon>
-          <div class="fs-13 selection-text" mat-line>{{hlc.display}}</div>
-        </mat-list-item>
-      </a>
-    </ng-container>
-  </ng-container>
   <ul nz-menu nzMode="inline">
-    <li nz-submenu nzTitle="Navigation Two" nzIcon="appstore">
-      <ul>
-        <li nz-menu-item>Option 5</li>
-        <li nz-menu-item>Option 6</li>
-        <li nz-submenu nzTitle="Submenu">
-          <ul>
-            <li nz-menu-item>Option 7</li>
-            <li nz-menu-item>Option 8</li>
-            <li nz-submenu nzTitle="Submenu">
-              <ul>
-                <li nz-menu-item>Option 9</li>
-                <li nz-menu-item>Option 10</li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </li>
+    <ng-container *ngFor="let parent of nestedMenu">
+      <li nz-submenu [nzTitle]="parent.parent.display" [nzIcon]="parent.parent.iconName"
+        [nzOpen]="parent.parent.url | menuOpenStatus">
+        <ul>
+          <ng-container *ngFor="let item of parent.parent.items">
+            <ng-container *ngIf="(item.items && item.items.length > 0); else soloItem">
+              <li nz-submenu [nzTitle]="item.display" [nzIcon]="item.iconName"
+                [nzOpen]="[parent.parent.url, item.url] | urlFromArray | menuOpenStatus">
+                <ng-container *ngFor="let sub of item.items">
+                  <ul>
+                    <li nz-menu-item [nzMatchRouter]="true">
+                      <a class="fs-13" mat-line [routerLink]="[parent.parent.url, item.url, sub.url] | urlFromArray"
+                        (click)="onNavItemClick()">
+                          {{ sub.display }}
+                      </a>
+                    </li>
+                  </ul>
+                </ng-container>
+              </li>
+            </ng-container>
+
+            <ng-template #soloItem>
+              <li nz-menu-item [nzMatchRouter]="true">
+                <a class="fs-13" mat-line [routerLink]="[parent.parent.url, item.url] | urlFromArray"
+                  (click)="onNavItemClick()">
+                    {{ item.display }}
+                </a>
+              </li>
+            </ng-template>
+          </ng-container>
+        </ul>
+      </li>
+    </ng-container>
   </ul>
 </mat-nav-list>
 

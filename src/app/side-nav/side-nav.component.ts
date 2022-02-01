@@ -1,8 +1,9 @@
 import { Component, OnInit, EventEmitter, Output, OnDestroy } from '@angular/core';
-import { NavHeaderList, NavHeader, NavHeaderLink } from '../shared/models/nav-item.model';
+import { NavHeaderList, NavHeader, NavHeaderLink, NestNavHeaderList } from '../shared/models/nav-item.model';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+import { ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-side-nav',
@@ -14,12 +15,15 @@ export class SideNavComponent implements OnInit, OnDestroy {
   headerList: NavHeaderList[] = [];
   navTitle: string = "Home";
   compDest$: Subject<any> = new Subject<any>();
+  nestedMenu: NestNavHeaderList[] = [];
+  openStatus: boolean = true;
 
   @Output()
   navClose: EventEmitter<any> = new EventEmitter<any>();
 
-  constructor(public router: Router) {
+  constructor(public router: Router, private cdr: ChangeDetectorRef) {
     this.createAllOptions();
+    this.createZorroMenu();
   }
 
   createAllOptions() {
@@ -34,11 +38,72 @@ export class SideNavComponent implements OnInit, OnDestroy {
   }
 
   createZorroMenu() {
-
+    this.nestedMenu.push(
+      {
+        parent: {
+          display: 'Overview',
+          iconName: 'container',
+          url: ['/', 'home'],
+          items: [
+            {
+              display: 'Summary',
+              iconName: 'project',
+              url: ['overview']
+            },
+          ]
+        },
+      },
+      { parent: {
+        display: 'Components',
+        iconName: 'container',
+        url: ['/', 'home', 'components'],
+        items: [
+          {
+            display: 'A',
+            iconName: 'project',
+            url: ['a'],
+            items: [
+              {
+                display: 'AA',
+                iconName: 'project',
+                url: ['aa']
+              },
+              {
+                display: 'BB',
+                iconName: 'project',
+                url: ['bb']
+              }
+            ]
+          },
+          {
+            display: 'B',
+            iconName: 'project',
+            url: ['b']
+          }
+        ]
+      },
+    },{
+      parent: {
+        display: 'Pipes',
+        iconName: 'container',
+        url: ['/', 'home', 'pipes'],
+        items: [
+          {
+            display: 'A',
+            iconName: 'project',
+            url: ['a']
+          },
+          {
+            display: 'B',
+            iconName: 'project',
+            url: ['b']
+          }
+        ]
+      },
+    })
   }
 
   ngOnInit() {
-
   }
 
   onNavClose() {

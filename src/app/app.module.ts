@@ -9,11 +9,13 @@ import { SideNavModule } from './side-nav/side-nav.module';
 import { TopNavModule } from './top-nav/top-nav.module';
 import { FooterModule } from './footer/footer.module';
 import { NotFoundComponentModule } from './404/404.module';
-import { AccountBookFill, AlertFill, AppstoreOutline } from '@ant-design/icons-angular/icons';
+import { AccountBookFill, AlertFill, AppstoreOutline ,
+  ProjectFill, ContainerFill, ProjectOutline, ContainerOutline} from '@ant-design/icons-angular/icons';
 import { IconDefinition } from '@ant-design/icons-angular';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 
-const icons: IconDefinition[] = [ AccountBookFill, AppstoreOutline, AlertFill ];
+const icons: IconDefinition[] = [ AppstoreOutline, ProjectFill, ContainerFill,
+  ProjectOutline, ContainerOutline ];
 
 @NgModule({
   declarations: [

@@ -16,7 +16,8 @@ export class NavHeader {
 }
 
 export class NavHeaderLink {
-  constructor(public display: string, public iconName: string, public url: string[]) {
+  constructor(public display: string, public iconName: string, public url?: string[],
+    public items?: NavHeaderLink[]) {
   }
 }
 
@@ -24,4 +25,9 @@ export class MenuItem {
   constructor(public iconName: string, public display: string, public id: string, public disabled?: boolean) {
 
   }
+}
+
+export interface NestNavHeaderList {
+  parent: NavHeaderLink;
+  children?: NavHeaderLink[];
 }

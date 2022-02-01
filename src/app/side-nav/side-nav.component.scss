@@ -1,5 +1,5 @@
 .nav-title-container {
-  padding: 16px;
+  padding-left: 24px;
   padding-bottom: 10px;
   font-weight: 400;
   display: flex;
@@ -73,4 +73,12 @@ ul {
 .ant-menu-inline .ant-menu-item {
   margin-top: 0px;
   margin-bottom: 0px;
+}
+
+div.ant-menu-submenu-title {
+  height: 24px;
+}
+
+li.ant-menu-item {
+  height: 24px;
 }

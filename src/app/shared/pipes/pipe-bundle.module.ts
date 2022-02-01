@@ -8,6 +8,7 @@ import { TableColumnDisplayPipe, TableDataDisplayPipe } from './table.pipe';
 import { SilingCompanyDisplay, SilingEntryTooltipDisplay } from './tooltip.pipe';
 import { ProfitPercentPipe, LocaleNumberPipe, RoundNumberPipe, ProfitPipe, ProfitGainClassPipe, ProfileGainBgColorPipe, ProfitPercentIconClassPipe } from './numbers.pipe';
 import { FormErrorDisplayPipe } from './form-utils.pipe';
+import { MenuOpenStatusPipe, UrlFromArray } from './general.pipe';
 
 @NgModule({
   imports: [],
@@ -30,7 +31,9 @@ import { FormErrorDisplayPipe } from './form-utils.pipe';
     TimeFromNowPipe,
     ProfileGainBgColorPipe,
     ProfitPercentIconClassPipe,
-    FormErrorDisplayPipe
+    FormErrorDisplayPipe,
+    UrlFromArray,
+    MenuOpenStatusPipe
   ],
 
   declarations: [
@@ -51,7 +54,9 @@ import { FormErrorDisplayPipe } from './form-utils.pipe';
     TimeFromNowPipe,
     ProfileGainBgColorPipe,
     ProfitPercentIconClassPipe,
-    FormErrorDisplayPipe
+    FormErrorDisplayPipe,
+    UrlFromArray,
+    MenuOpenStatusPipe
   ],
 
   providers: [
