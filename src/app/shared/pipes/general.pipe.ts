@@ -65,7 +65,7 @@ export class MenuOpenStatusPipe implements PipeTransform {
       const urlArray: string[] = [...value];
       urlArray.splice(homeIndex, 1);
       const lastSeg = urlArray[urlArray.length - 1];
-      if (segs.includes('overview')) {
+      if (segs.includes('overview') || segs[0]==='') { // overview or just / route
         if (lastSeg === '/') {
           return true;
         }
