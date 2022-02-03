@@ -2,5 +2,5 @@ import { Environment } from "./environment.model";
 
 export const environment: Environment = {
   production: true,
-  appTitle: 'AU'
+  appTitle: 'Udemy AU'
 };
