@@ -2,11 +2,14 @@
   <div class="container-fluid">
     <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="50px">
       <!-- App logo -->
-      <div fxLayout="column" fxLayoutAlign="start center">
+      <div fxLayout="column" fxLayoutAlign="start start">
         <div class="img-parent">
           <img src="assets/img/au.png" class="footer-img" alt="logo">
         </div>
         <div class="font1 logo-txt">{{ appTitle }}</div>
+        <div>
+          {{ this.ms.getAppVersion$ | async }}
+        </div>
       </div>
 
       <!-- Links -->

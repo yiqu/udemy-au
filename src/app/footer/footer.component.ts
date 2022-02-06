@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment';
+import { AppMetaService } from '../shared/services/app-meta.service';
 import { FooterLink, FooterSection, IFooterSection } from './footer.model';
 
 @Component({
@@ -14,7 +15,7 @@ export class AppFooterComponent implements OnInit {
   appTitle: string = environment.appTitle;
   footerSections: IFooterSection[] = [];
 
-  constructor() {
+  constructor(public ms: AppMetaService) {
     this.createFooterLinks();
   }
 
@@ -27,7 +28,8 @@ export class AppFooterComponent implements OnInit {
         [
           new FooterLink('What is AU', ''),
           new FooterLink('What is Udemy', ''),
-          new FooterLink('What is this', 'https://github.com/yiqu/udemy-au')
+          new FooterLink('What is this', 'https://github.com/yiqu/udemy-au'),
+          new FooterLink('What is Github', 'https://github.com/yiqu/udemy-au')
         ]
       ),
       new FooterSection('Developers',

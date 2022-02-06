@@ -52,7 +52,6 @@ export class UrlFromArray implements PipeTransform {
 export class MenuOpenStatusPipe implements PipeTransform {
 
   constructor(private loc: Location) {
-    console.log(this.loc.path())
   }
 
   transform(value: string[] | undefined): boolean {
