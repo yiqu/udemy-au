@@ -1,0 +1,45 @@
+<div fxLayout="column" fxLayoutAlign="start start" class="parent">
+  <div fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="5px" class="w-100">
+    <div>
+      1) One way binding value using ngModel
+    </div>
+    <div>
+      Variable value: {{ngModelValue}}
+    </div>
+    <div class="example-form w-50">
+      <mat-form-field class="example-full-width">
+        <input matInput [ngModel]="ngModelValue">
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="5px" class="w-100">
+    <div>
+      2) Two way binding value using ngModel
+    </div>
+    <div>
+      Variable value: {{ngModelValue2}}
+    </div>
+    <div class="example-form w-50">
+      <mat-form-field class="example-full-width">
+        <input matInput [(ngModel)]="ngModelValue2">
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="5px" class="w-100">
+    <div>
+      3) Getting value using template variable #variable
+    </div>
+    <div>
+      Variable value: {{valueFromTemplateVariable}}
+    </div>
+    <div class="example-form w-50">
+      <mat-form-field class="example-full-width">
+        <input matInput (keyup)="onKeyup(myInput.value)" #myInput>
+      </mat-form-field>
+    </div>
+  </div>
+
+
+</div>

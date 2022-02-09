@@ -50,6 +50,11 @@ export class SideNavComponent implements OnInit, OnDestroy {
               iconName: 'project',
               url: ['overview']
             },
+            {
+              display: 'Components',
+              iconName: 'project',
+              url: ['component']
+            },
           ]
         },
       },
