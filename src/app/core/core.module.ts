@@ -4,6 +4,9 @@ import { ComponentComponent } from './components/comp.component';
 import { CoreRoutingModule } from './core-routing.module';
 
 import { CoreComponent } from './core.component';
+import { NgIfComponent } from './ngif/ngif.component';
+import { NgStyleComponent } from './ngstyle/ngstyle.component';
+import { NgSwitchComponent } from './ngswitch/ngswitch.component';
 
 @NgModule({
   imports: [
@@ -13,7 +16,10 @@ import { CoreComponent } from './core.component';
   exports: [],
   declarations: [
     CoreComponent,
-    ComponentComponent
+    ComponentComponent,
+    NgIfComponent,
+    NgSwitchComponent,
+    NgStyleComponent
   ],
   providers: [],
 })

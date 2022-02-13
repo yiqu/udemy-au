@@ -55,6 +55,21 @@ export class SideNavComponent implements OnInit, OnDestroy {
               iconName: 'project',
               url: ['component']
             },
+            {
+              display: 'Ng If',
+              iconName: 'project',
+              url: ['ngif']
+            },
+            {
+              display: 'Ng Switch',
+              iconName: 'project',
+              url: ['ngswitch']
+            },
+            {
+              display: 'Ng Style Ng Class',
+              iconName: 'project',
+              url: ['ngstylengclass']
+            },
           ]
         },
       },

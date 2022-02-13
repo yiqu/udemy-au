@@ -1,0 +1,17 @@
+<div fxLayout="column" fxLayoutAlign="start start" class="parent" fxLayoutGap="30px">
+
+  <div>
+    Ng Class Array:
+    <span class="ml-3">{{classArray}}</span>
+    <div [ngClass]="classArray" class="card mt-3">
+      Cool Text
+    </div>
+  </div>
+
+  <div>
+    Ng Style <span>{{styleObj | json}}</span>
+    <div [ngStyle]="styleObj" class="mt-3">
+      Cool Text
+    </div>
+  </div>
+</div>

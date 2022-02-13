@@ -1,0 +1,49 @@
+<div fxLayout="row" fxLayoutAlign="start start" class="parent" fxLayoutGap="30px">
+  <div fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="5px" class="w-100">
+    <div>
+      1) Using Ng If with div
+    </div>
+    <div *ngIf="showText">
+      Cool Text
+    </div>
+    <div class="example-form w-50">
+      <button nz-button (click)="toggleShow()">Toggle Text {{showText}}</button>
+    </div>
+  </div>
+
+  <div fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="5px" class="w-100">
+    <div>
+      2) Using Ng If with ng-container
+    </div>
+    <ng-container *ngIf="showText">
+      <div>
+        Cool Text
+      </div>
+    </ng-container>
+    <div class="example-form w-50">
+      <div class="example-form w-50">
+        <button nz-button (click)="toggleShow()">Toggle Text</button>
+      </div>
+    </div>
+  </div>
+
+  <div fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="5px" class="w-100">
+    <div>
+      3) Using Ng If with else block
+    </div>
+    <ng-container *ngIf="showText; else noText">
+      <div>
+        Cool Text
+      </div>
+    </ng-container>
+    <div class="example-form w-50">
+      <div class="example-form w-50">
+        <button nz-button (click)="toggleShow()">Toggle Text</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #noText>
+  No text right now
+</ng-template>

@@ -1,0 +1,19 @@
+<div fxLayout="column" fxLayoutAlign="start start" class="parent" fxLayoutGap="30px">
+
+  <div>
+    <button nz-button (click)="toggle()">Make a random selection</button>
+    <span>{{this.randResult}}</span>
+  </div>
+
+  <div [ngSwitch]="choice">
+    <ng-container *ngFor="let opt of options">
+      <div *ngSwitchCase="opt">
+        <nz-alert [nzType]="$any(opt)" nzMessage="You picked {{ opt }}"></nz-alert>
+      </div>
+    </ng-container>
+    <div *ngSwitchDefault>
+      <nz-alert nzType="info" nzMessage="No selection is made... default"></nz-alert>
+    </div>
+  </div>
+
+</div>
