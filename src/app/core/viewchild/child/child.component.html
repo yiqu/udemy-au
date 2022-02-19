@@ -1,0 +1,12 @@
+<div class="">
+  <div class="border">
+    Hello I am  Child One Component. Current time is {{date}}
+  </div>
+  <div #madeBy class="border success mb-1">
+    Made by KQ (this div can not be query'd from parent level)
+  </div>
+
+  <div class="mt-2">
+    Made By element ref: {{madeBy ?? 'Undefined'}} (from current level)
+  </div>
+</div>

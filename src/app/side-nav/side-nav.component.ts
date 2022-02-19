@@ -70,6 +70,16 @@ export class SideNavComponent implements OnInit, OnDestroy {
               iconName: 'project',
               url: ['ngstylengclass']
             },
+            {
+              display: 'ViewChild',
+              iconName: 'project',
+              url: ['viewchild']
+            },
+            {
+              display: 'ViewChildren',
+              iconName: 'project',
+              url: ['ngstylengclass']
+            },
           ]
         },
       },

@@ -7,6 +7,8 @@ import { CoreComponent } from './core.component';
 import { NgIfComponent } from './ngif/ngif.component';
 import { NgStyleComponent } from './ngstyle/ngstyle.component';
 import { NgSwitchComponent } from './ngswitch/ngswitch.component';
+import { ChildOneComponent } from './viewchild/child/child1.component';
+import { ViewChildComponent } from './viewchild/viewchild.component';
 
 @NgModule({
   imports: [
@@ -19,7 +21,9 @@ import { NgSwitchComponent } from './ngswitch/ngswitch.component';
     ComponentComponent,
     NgIfComponent,
     NgSwitchComponent,
-    NgStyleComponent
+    NgStyleComponent,
+    ViewChildComponent,
+    ChildOneComponent
   ],
   providers: [],
 })

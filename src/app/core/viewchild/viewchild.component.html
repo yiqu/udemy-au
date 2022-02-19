@@ -1,0 +1,36 @@
+<div fxLayout="column" fxLayoutAlign="start start" class="parent" fxLayoutGap="30px">
+  <div>
+    <div class="font-weight-bold mb-2">
+      Life Cycle Status for View Child:
+    </div>
+    <ul>
+      <li *ngFor="let seq of viewSequence">
+        {{ seq }}
+      </li>
+    </ul>
+  </div>
+  <div>
+    Child One is a component. Update its date property by pressing the button.
+  </div>
+  <div>
+    <button mat-flat-button color="primary" (click)="updateChildOneDate()"> Updare Child One's date property</button>
+    <div>
+      This will only update the first one because ViewChild() will point to first matching selector.
+    </div>
+  </div>
+
+  <div>
+    <div>
+      1/2 Child One Component
+    </div>
+    <app-core-viewchild-child1></app-core-viewchild-child1>
+    <div class="mt-3">
+      2/2 Child One Component
+    </div>
+    <app-core-viewchild-child1></app-core-viewchild-child1>
+  </div>
+
+  <div>
+    Made By element ref: {{madeBy ?? 'Undefined'}} (from parent level)
+  </div>
+</div>
