@@ -1,5 +1,6 @@
-import { Component, OnInit, ViewChild, AfterViewInit, AfterViewChecked, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit, AfterViewChecked, ElementRef, ViewChildren, QueryList } from '@angular/core';
 import { ChildOneComponent } from './child/child1.component';
+import { ChildTwoComponent } from './child2/child2.component';
 
 @Component({
   selector: 'app-core-viewchild',
@@ -14,9 +15,13 @@ export class ViewChildComponent implements OnInit, AfterViewInit, AfterViewCheck
   @ViewChild('madeBy')
   madeBy?: ElementRef;
 
-  viewSequence: string[] = [];
+  @ViewChildren(ChildTwoComponent)
+  childrenTwos?: QueryList<ChildTwoComponent>;
 
+  viewSequence: string[] = [];
   childOneExist: boolean = false;
+  childTwos: string[] = ['1','2'];
+  child2Sequence: string[] = [];
 
   constructor() {
     this.viewSequence.push("Constructor. Child One Component status:  " + this.childOneComp);
@@ -28,6 +33,12 @@ export class ViewChildComponent implements OnInit, AfterViewInit, AfterViewCheck
 
   ngAfterViewInit(): void {
     this.viewSequence.push("Ng After View Init. Child One Component status:  " + this.childOneComp);
+    this.child2Sequence.push("View Children, children count: " + this.childrenTwos?.length);
+
+    this.childrenTwos?.changes.subscribe((res) => {
+      this.child2Sequence.push("Changes occured for ViewChildren query list");
+      console.log(this.childrenTwos, this.child2Sequence);
+    })
   }
 
   ngAfterViewChecked(): void {
@@ -37,5 +48,9 @@ export class ViewChildComponent implements OnInit, AfterViewInit, AfterViewCheck
     if (this.childOneComp) {
       this.childOneComp.updateDate();
     }
+  }
+
+  addAChildTwo() {
+    this.childTwos.push("AA");
   }
 }

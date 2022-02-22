@@ -7,6 +7,7 @@ import { NgIfComponent } from './ngif/ngif.component';
 import { NgSwitchComponent } from './ngswitch/ngswitch.component';
 import { NgStyleComponent } from './ngstyle/ngstyle.component';
 import { ViewChildComponent } from './viewchild/viewchild.component';
+import { ProjectionComponent } from './projection/projection.component';
 
 export const routes: Routes = [
   { path: "", component: CoreComponent,
@@ -40,8 +41,13 @@ export const routes: Routes = [
       { path: 'viewchild', component:  ViewChildComponent,
         data: {
           pageTitle: 'View Child'
-      }
-    },
+        }
+      },
+      { path: 'projection', component:  ProjectionComponent,
+        data: {
+          pageTitle: 'Projection'
+        }
+      },
     ],
   }
 ]

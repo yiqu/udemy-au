@@ -1,0 +1,53 @@
+<div fxLayout="column" fxLayoutAlign="start start" class="parent" fxLayoutGap="30px">
+  <div>
+    Project user information using ng-content projection
+  </div>
+
+  <div fxLayout="row" fxLayoutGap="20px">
+    <div>
+      <div>
+        <mat-form-field class="example-full-width">
+          <mat-label>Enter user name</mat-label>
+          <input matInput placeholder="Ex. Kevin" value="Kevin" #userName>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field class="example-full-width">
+          <mat-label>Enter user age</mat-label>
+          <input matInput placeholder="Ex. 21" value="19" #userAge>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field class="example-full-width">
+          <mat-label>Enter user interest</mat-label>
+          <input matInput placeholder="Ex. cars" value="Cars" #userInterest>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field class="example-full-width">
+          <mat-label>Enter other info</mat-label>
+          <input matInput placeholder="Ex. cars" value="Cool" #other>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div>
+      <app-core-user-a>
+        <div userName>
+          {{userName.value}}
+        </div>
+        <div userAge>
+          {{userAge.value}}
+        </div>
+        <div userinterest>
+          {{userInterest.value}}
+        </div>
+        <div>
+          {{other.value}}
+        </div>
+      </app-core-user-a>
+    </div>
+  </div>
+
+</div>

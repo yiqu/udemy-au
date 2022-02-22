@@ -7,7 +7,10 @@ import { CoreComponent } from './core.component';
 import { NgIfComponent } from './ngif/ngif.component';
 import { NgStyleComponent } from './ngstyle/ngstyle.component';
 import { NgSwitchComponent } from './ngswitch/ngswitch.component';
+import { ProjectionCompAComponent } from './projection/compA/user.component';
+import { ProjectionComponent } from './projection/projection.component';
 import { ChildOneComponent } from './viewchild/child/child1.component';
+import { ChildTwoComponent } from './viewchild/child2/child2.component';
 import { ViewChildComponent } from './viewchild/viewchild.component';
 
 @NgModule({
@@ -23,7 +26,10 @@ import { ViewChildComponent } from './viewchild/viewchild.component';
     NgSwitchComponent,
     NgStyleComponent,
     ViewChildComponent,
-    ChildOneComponent
+    ChildOneComponent,
+    ChildTwoComponent,
+    ProjectionComponent,
+    ProjectionCompAComponent
   ],
   providers: [],
 })

@@ -1,0 +1,41 @@
+<div class="parent">
+  <div class=" mb-3">
+    I am a child component displaying value that is projected from parent.
+  </div>
+  <div fxLayout="row">
+    <div>
+      User Name:
+    </div>
+    <div>
+      <ng-content select="[userName]"></ng-content>
+    </div>
+  </div>
+
+  <div fxLayout="row">
+    <div>
+      User Age:
+    </div>
+    <div>
+      <ng-content select="[userAge]"></ng-content>
+    </div>
+  </div>
+
+  <div fxLayout="row">
+    <div>
+      User Interest:
+    </div>
+    <div>
+      <ng-content select="[userinterest]"></ng-content>
+    </div>
+  </div>
+
+  <div fxLayout="row">
+    <div>
+      Other info:
+    </div>
+    <div>
+      <ng-content></ng-content>
+    </div>
+  </div>
+</div>
+

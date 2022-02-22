@@ -33,4 +33,24 @@
   <div>
     Made By element ref: {{madeBy ?? 'Undefined'}} (from parent level)
   </div>
+
+  <hr class="w-100">
+  <div class="mt-3">
+    View Children:
+  </div>
+  <div>
+    Children component:
+  </div>
+  <button mat-flat-button color="primary" (click)="addAChildTwo()"> Add another child two component</button>
+  <div fxLayout="row">
+    <div *ngFor="let child of childTwos">
+      <app-core-viewchild-child2></app-core-viewchild-child2>
+    </div>
+  </div>
+
+  <div class="mt-3">
+    <div *ngFor="let seq of child2Sequence">
+      {{seq}}
+    </div>
+  </div>
 </div>
