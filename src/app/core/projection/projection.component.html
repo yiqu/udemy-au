@@ -34,16 +34,12 @@
 
     <div>
       <app-core-user-a>
-        <div userName>
-          {{userName.value}}
-        </div>
-        <div userAge>
-          {{userAge.value}}
-        </div>
-        <div userinterest>
+          <app-core-value-display [value]="userName.value" class="name"></app-core-value-display>
+          <app-core-value-display [value]="userAge.value" class="age"></app-core-value-display>
+        <div userinterest #interest>
           {{userInterest.value}}
         </div>
-        <div>
+        <div #interest>
           {{other.value}}
         </div>
       </app-core-user-a>
