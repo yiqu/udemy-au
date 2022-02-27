@@ -1,0 +1,35 @@
+<div fxLayout="column" fxLayoutAlign="start start" class="parent" fxLayoutGap="30px">
+  <div>
+    <div class="font-weight-bold mb-2">
+      Using ng-template via templateOutlet
+    </div>
+
+    <div>
+      The user pic and user desc components are templates being passed into user component.
+    </div>
+  </div>
+
+  <ng-container *ngFor="let user of users; index as i">
+
+    <ng-template #userPic let-picUrl="payload"  let-version="version">
+      <app-template-pic [url]="picUrl"></app-template-pic>
+      <div class="text-muted">
+        Version ({{version}})
+      </div>
+    </ng-template>
+
+    <ng-template #userDesc let-desc="payload" let-version="version">
+      <app-template-desc [userDesc]="desc"></app-template-desc>
+      <div class="text-muted">
+        Version ({{version}})
+      </div>
+    </ng-template>
+
+    <app-template-user [userPicTpl]="userPic" [userDescTpl]="userDesc" [user]="user">
+      {{i+1 + ':'}}
+    </app-template-user>
+
+  </ng-container>
+
+</div>
+

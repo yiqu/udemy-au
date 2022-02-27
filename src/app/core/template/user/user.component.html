@@ -1,0 +1,9 @@
+<div>
+  User <ng-content [select]="userIndex"></ng-content>
+</div>
+
+<ng-container *ngTemplateOutlet="userPicTpl; context:{ payload: this.user?.picUrl, version: '1' }">
+</ng-container>
+
+<ng-container *ngTemplateOutlet="userDescTpl; context:{ payload: this.user?.desc, version: '1'}">
+</ng-container>
