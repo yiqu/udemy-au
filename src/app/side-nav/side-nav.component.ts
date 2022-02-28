@@ -85,6 +85,11 @@ export class SideNavComponent implements OnInit, OnDestroy {
               iconName: 'project',
               url: ['template']
             },
+            {
+              display: 'Directives',
+              iconName: 'project',
+              url: ['directives']
+            },
           ]
         },
       },

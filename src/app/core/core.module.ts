@@ -4,6 +4,9 @@ import { ComponentComponent } from './components/comp.component';
 import { CoreRoutingModule } from './core-routing.module';
 
 import { CoreComponent } from './core.component';
+import { DirectivesDisplayComponent } from './directives/directives.component';
+import { HighLightDirective } from './directives/highlight/highlight.dir';
+import { UnlessDirective } from './directives/ngunless/unless.dir';
 import { NgIfComponent } from './ngif/ngif.component';
 import { NgStyleComponent } from './ngstyle/ngstyle.component';
 import { NgSwitchComponent } from './ngswitch/ngswitch.component';
@@ -39,7 +42,10 @@ import { ViewChildComponent } from './viewchild/viewchild.component';
     TemplateComponent,
     TemplatePicComponent,
     TemplateDescComponent,
-    TemplateUserComponent
+    TemplateUserComponent,
+    DirectivesDisplayComponent,
+    HighLightDirective,
+    UnlessDirective
   ],
   providers: [],
 })

@@ -9,6 +9,7 @@ import { NgStyleComponent } from './ngstyle/ngstyle.component';
 import { ViewChildComponent } from './viewchild/viewchild.component';
 import { ProjectionComponent } from './projection/projection.component';
 import { TemplateComponent } from './template/template.component';
+import { DirectivesDisplayComponent } from './directives/directives.component';
 
 export const routes: Routes = [
   { path: "", component: CoreComponent,
@@ -52,6 +53,11 @@ export const routes: Routes = [
       { path: 'template', component:  TemplateComponent,
         data: {
           pageTitle: 'Template'
+        }
+      },
+      { path: 'directives', component:  DirectivesDisplayComponent,
+        data: {
+          pageTitle: 'Directives'
         }
       },
     ],

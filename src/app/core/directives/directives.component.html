@@ -1,0 +1,52 @@
+<div fxLayout="column" fxLayoutAlign="start start" class="parent mb-5" fxLayoutGap="30px">
+  <div>
+    <div class="font-weight-bold mb-2">
+      Creating own directives and using view child to get directive instance
+    </div>
+
+    <div class="my-5 content" highlight #hlDirective="hl" #content>
+      Mouse over me to highlight
+    </div>
+
+    <div>
+      <button mat-stroked-button color="primary" (click)="manuallyHighlight()">Manually Highlight</button>
+    </div>
+  </div>
+  <div>
+    <ul>
+      <li *ngFor="let log of logs">
+        {{log}}
+      </li>
+    </ul>
+  </div>
+
+  <div>
+    <div class="font-weight-bold mb-2">
+      Creating own structrual directives called ngxUnless
+    </div>
+
+    <div class="my-5 content" *ngxUnless="unless">
+      Only show unless...
+    </div>
+
+    <div>
+      <button mat-stroked-button color="primary" (click)="toggleUnless()">Toggle unless</button>
+    </div>
+  </div>
+
+  <div>
+    <div class="font-weight-bold mb-2">
+      Creating own structrual directives called ngxUnless
+    </div>
+
+    <div class="my-5 content" *ngxUnless="unless2">
+      Only show unless...
+    </div>
+
+    <div>
+      <button mat-stroked-button color="primary" (click)="toggleUnless2()">Toggle unless</button>
+    </div>
+  </div>
+
+</div>
+
