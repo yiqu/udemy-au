@@ -4,6 +4,8 @@ import { ComponentComponent } from './components/comp.component';
 import { CoreRoutingModule } from './core-routing.module';
 
 import { CoreComponent } from './core.component';
+import { CssEncapChildComponent } from './css-encap/child/child.component';
+import { CssEncapComponent } from './css-encap/css.component';
 import { DirectivesDisplayComponent } from './directives/directives.component';
 import { HighLightDirective } from './directives/highlight/highlight.dir';
 import { UnlessDirective } from './directives/ngunless/unless.dir';
@@ -45,7 +47,9 @@ import { ViewChildComponent } from './viewchild/viewchild.component';
     TemplateUserComponent,
     DirectivesDisplayComponent,
     HighLightDirective,
-    UnlessDirective
+    UnlessDirective,
+    CssEncapComponent,
+    CssEncapChildComponent
   ],
   providers: [],
 })

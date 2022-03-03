@@ -1,0 +1,39 @@
+:host {
+  color: white;
+}
+
+.title {
+  color: black;
+}
+
+::ng-deep .child-parent {
+  .child-title {
+    background-color: blue;
+  }
+
+  .child-content {
+    background-color: green;
+  }
+
+  .title {
+    color: black;
+  }
+
+}
+
+
+// ::ng-deep .parent .content {
+
+//   font-size: 25px;
+//   color: black;
+
+// }
+
+:host-context(.parent) .content {
+
+  ::ng-deep .footer-content {
+    font-size: 25px;
+    color: black;
+  }
+
+}

@@ -90,6 +90,11 @@ export class SideNavComponent implements OnInit, OnDestroy {
               iconName: 'project',
               url: ['directives']
             },
+            {
+              display: 'CSS View Encap',
+              iconName: 'project',
+              url: ['encap']
+            },
           ]
         },
       },

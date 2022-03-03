@@ -1,0 +1,34 @@
+<div fxLayout="column" fxLayoutAlign="start start" class="parent mb-5" fxLayoutGap="30px">
+  <div>
+    <div class="font-weight-bold mb-2">
+      Using CSS Encapsulation modes to apply css styles for projected content
+    </div>
+
+    <div class="my-5 content" highlight #hlDirective="hl" #content>
+      Content below is projected into the child component
+    </div>
+
+  </div>
+
+  <app-encap-child>
+    <div class="child-parent">
+      <div class="title mb-2">
+        My color is set inside child.component.scss, not parent component
+      </div>
+      <div class="child-title mb-2">
+        This text is projected into the Child Component from parent component.
+      </div>
+      <div class="child-content mb-2">
+        Brown Fox Jumped Over White Rabbit.
+      </div>
+      <div class="footer-content">
+        Footer (css set using :host-context)
+      </div>
+    </div>
+  </app-encap-child>
+
+  <div class="content mt-3">
+    More content outside the child, not affected because of host-content
+  </div>
+</div>
+

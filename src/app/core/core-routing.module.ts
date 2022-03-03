@@ -10,6 +10,7 @@ import { ViewChildComponent } from './viewchild/viewchild.component';
 import { ProjectionComponent } from './projection/projection.component';
 import { TemplateComponent } from './template/template.component';
 import { DirectivesDisplayComponent } from './directives/directives.component';
+import { CssEncapComponent } from './css-encap/css.component';
 
 export const routes: Routes = [
   { path: "", component: CoreComponent,
@@ -58,6 +59,11 @@ export const routes: Routes = [
       { path: 'directives', component:  DirectivesDisplayComponent,
         data: {
           pageTitle: 'Directives'
+        }
+      },
+      { path: 'encap', component:  CssEncapComponent,
+        data: {
+          pageTitle: 'Css Encap'
         }
       },
     ],
