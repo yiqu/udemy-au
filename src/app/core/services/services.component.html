@@ -1,0 +1,32 @@
+<div fxLayout="column" fxLayoutAlign="start start" class="parent mb-5" fxLayoutGap="30px">
+  <div>
+    <div class="font-weight-bold mb-2">
+      Services Hierarchy
+    </div>
+
+    <div class="my-5 content">
+      Services bubbles up in a hierarchical way.
+      <div>
+        If the service is not found at lowest level, it will go up till it reaches the top.
+      </div>
+    </div>
+
+    <div class="mb-2">
+      <div>
+        Service injected via module provider.  Using top level service
+      </div>
+      Service's user name: {{this.ns.userName}}
+    </div>
+
+    <div>
+      <app-services-child2></app-services-child2>
+    </div>
+  </div>
+
+  <app-services-child></app-services-child>
+
+  <app-services-child></app-services-child>
+
+
+</div>
+

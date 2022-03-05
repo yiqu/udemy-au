@@ -15,6 +15,10 @@ import { NgSwitchComponent } from './ngswitch/ngswitch.component';
 import { ProjectionCompAComponent } from './projection/compA/user.component';
 import { ProjectionComponent } from './projection/projection.component';
 import { ValueDisplayComponent } from './projection/value-display/display.component';
+import { ServiceChildComponent } from './services/child/child.component';
+import { Name2Service } from './services/child/name.service-2';
+import { Child2Component } from './services/child2/child2.component';
+import { ServicesComponent } from './services/services.component';
 import { TemplateDescComponent } from './template/profile-desc/desc.component';
 import { TemplatePicComponent } from './template/profile-pic/pic.component';
 import { TemplateComponent } from './template/template.component';
@@ -49,8 +53,14 @@ import { ViewChildComponent } from './viewchild/viewchild.component';
     HighLightDirective,
     UnlessDirective,
     CssEncapComponent,
-    CssEncapChildComponent
+    CssEncapChildComponent,
+    ServicesComponent,
+    ServiceChildComponent,
+    Child2Component
+
   ],
-  providers: [],
+  providers: [
+    Name2Service
+  ],
 })
 export class CoreModule { }

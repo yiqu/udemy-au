@@ -95,6 +95,11 @@ export class SideNavComponent implements OnInit, OnDestroy {
               iconName: 'project',
               url: ['encap']
             },
+            {
+              display: 'Services Hierarchy',
+              iconName: 'project',
+              url: ['services']
+            },
           ]
         },
       },

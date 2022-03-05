@@ -1,0 +1,14 @@
+<div class="my-2">
+  <div>
+    Child component with their own provider for service.
+  </div>
+  Service's user name: {{this.ns.userName}}
+
+  <div>
+    <button mat-stroked-button (click)="this.ns.userName = 'Kevin'">Change name to Kevin</button>
+    <button mat-stroked-button (click)="this.ns.userName = 'Bekah'">Change name to Bekah</button>
+  </div>
+  <div>
+    Changing the name will not affect other components with their own instance.
+  </div>
+</div>

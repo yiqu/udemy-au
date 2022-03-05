@@ -11,6 +11,7 @@ import { ProjectionComponent } from './projection/projection.component';
 import { TemplateComponent } from './template/template.component';
 import { DirectivesDisplayComponent } from './directives/directives.component';
 import { CssEncapComponent } from './css-encap/css.component';
+import { ServicesComponent } from './services/services.component';
 
 export const routes: Routes = [
   { path: "", component: CoreComponent,
@@ -64,6 +65,11 @@ export const routes: Routes = [
       { path: 'encap', component:  CssEncapComponent,
         data: {
           pageTitle: 'Css Encap'
+        }
+      },
+      { path: 'services', component:  ServicesComponent,
+        data: {
+          pageTitle: 'Services'
         }
       },
     ],
