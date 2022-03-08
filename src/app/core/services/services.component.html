@@ -27,6 +27,48 @@
 
   <app-services-child></app-services-child>
 
+  <div class="my-3">
+    <div class="mb-2">
+      Using @Inject to inject a global object to this component
+    </div>
+
+    <div>
+      Injected user config value via useFactory:
+      <div class="mb-2">
+        {{this.userConfig | json}}
+      </div>
+      Injected address config value via useFactory:
+      <div>
+        {{this.addressConfig | json}}
+      </div>
+    </div>
+  </div>
+
+  <app-services-another></app-services-another>
+
+  <div class="mb-2">
+    <div>
+      <app-services-self></app-services-self>
+    </div>
+  </div>
+
+  <div class="mb-2">
+    <div>
+      <app-services-skip-self></app-services-skip-self>
+    </div>
+  </div>
+
+  <div class="mb-2">
+    <div>
+      Using @Host in a directive
+    </div>
+    <div>
+      <app-services-child3 [testingHost]="this.us.apiUrl"></app-services-child3>
+    </div>
+    <div>
+      <button mat-stroked-button (click)="this.us.apiUrl = 'Changed!!!'">Change url</button>
+    </div>
+  </div>
 
 </div>
 
