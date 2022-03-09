@@ -12,6 +12,7 @@ import { TemplateComponent } from './template/template.component';
 import { DirectivesDisplayComponent } from './directives/directives.component';
 import { CssEncapComponent } from './css-encap/css.component';
 import { ServicesComponent } from './services/services.component';
+import { DetectionComponent } from './detection/detection.component';
 
 export const routes: Routes = [
   { path: "", component: CoreComponent,
@@ -72,6 +73,11 @@ export const routes: Routes = [
           pageTitle: 'Services'
         }
       },
+      { path: 'detection', component:  DetectionComponent,
+      data: {
+        pageTitle: 'Detection'
+      }
+    },
     ],
   }
 ]

@@ -1,0 +1,38 @@
+<div fxLayout="column" fxLayoutAlign="start start" class="parent mb-5" fxLayoutGap="30px">
+  <div>
+    <div class="font-weight-bold mb-2">
+      Angular detection changes: On Push and Default
+    </div>
+
+    <div class="my-5 content" highlight #hlDirective="hl" #content>
+      OnPush will check by reference
+    </div>
+
+  </div>
+
+  <div>
+    <div>
+      Update input for child component:
+      <div>
+        <mat-form-field class="full-width" appearance="outline">
+          <input matInput [formControl]="inputCtrl" placeholder="Ex. pat@example.com">
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="my-2">
+      Will update because @input is a primtative
+    </div>
+    <app-detection-child [name]="inputCtrl.value"></app-detection-child>
+
+    <div class="my-2">
+      Will NOT update @input is a object
+    </div>
+    <app-detection-child [nameObject]="nameObject"></app-detection-child>
+
+    <div class="my-2">
+      Will update @input is a object with new reference
+    </div>
+    <app-detection-child [nameObject]="newNameObject"></app-detection-child>
+  </div>
+</div>
+
