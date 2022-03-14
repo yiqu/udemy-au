@@ -41,9 +41,9 @@ export class SideNavComponent implements OnInit, OnDestroy {
     this.nestedMenu.push(
       {
         parent: {
-          display: 'Overview',
+          display: 'AU B to Advanced',
           iconName: 'container',
-          url: ['/', 'home'],
+          url: ['/', 'au'],
           items: [
             {
               display: 'Summary',
@@ -108,7 +108,26 @@ export class SideNavComponent implements OnInit, OnDestroy {
           ]
         },
       },
-      { parent: {
+      {
+        parent: {
+          display: 'Forms in Depth',
+          iconName: 'container',
+          url: ['/', 'fid'],
+          items: [
+            {
+              display: 'Reactive Forms',
+              iconName: 'project',
+              url: ['reactive']
+            },
+            {
+              display: 'B',
+              iconName: 'project',
+              url: ['b']
+            }
+        ]},
+      },
+      {
+        parent: {
         display: 'Components',
         iconName: 'container',
         url: ['/', 'home', 'components'],
@@ -135,27 +154,27 @@ export class SideNavComponent implements OnInit, OnDestroy {
             iconName: 'project',
             url: ['b']
           }
-        ]
+        ]},
       },
-    },{
-      parent: {
-        display: 'Pipes',
-        iconName: 'container',
-        url: ['/', 'home', 'pipes'],
-        items: [
-          {
-            display: 'A',
-            iconName: 'project',
-            url: ['a']
-          },
-          {
-            display: 'B',
-            iconName: 'project',
-            url: ['b']
-          }
-        ]
-      },
-    })
+      {
+        parent: {
+          display: 'Pipes',
+          iconName: 'container',
+          url: ['/', 'home', 'pipes'],
+          items: [
+            {
+              display: 'A',
+              iconName: 'project',
+              url: ['a']
+            },
+            {
+              display: 'B',
+              iconName: 'project',
+              url: ['b']
+            }
+        ]},
+      }
+    )
   }
 
   ngOnInit() {
