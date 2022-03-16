@@ -16,7 +16,7 @@ jobs:
             - ~/.cache
       - run: |
           if [ "${CIRCLE_BRANCH}" == "master" ]; then
-            npm run build-ghpages
+            ng build --configuration=production --base-href=/udemy-au/
           else
             npm run build
           fi
