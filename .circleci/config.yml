@@ -14,7 +14,7 @@ jobs:
           paths:
             - ~/.npm
             - ~/.cache
-      - run: npm install -g @angular/cli
+      - run: npm install @angular/cli
       - run: echo "Building for PROD"
       - run: |
           if [ "${CIRCLE_BRANCH}" == "master" ]; then
