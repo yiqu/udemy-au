@@ -25,7 +25,7 @@ export class PageTitleEffect implements OnInitEffects {
       ofType(ROUTER_NAVIGATED),
       concatLatestFrom(() => this.rs.routeData$),
       map((data: [Action, Data]) => {
-        const routeData = data[1];
+        const routeData: Data = data[1];
         return fromPageTitleActions.setPageTitle({ mainTitle: routeData.pageTitle });
       })
     );
