@@ -18,6 +18,7 @@ jobs:
       - run: echo "Building for PROD"
       - run: |
           if [ "${CIRCLE_BRANCH}" == "master" ]; then
+            npm install @angular/cli
             ng build --configuration=production --base-href=/udemy-au/
           else
             npm run build
