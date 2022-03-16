@@ -15,7 +15,7 @@ jobs:
             - ~/.npm
             - ~/.cache
       - run: npm install -g @angular/cli
-      - rub: echo "Building for PROD"
+      - run: echo "Building for PROD"
       - run: |
           if [ "${CIRCLE_BRANCH}" == "master" ]; then
             ng build --configuration=production --base-href=/udemy-au/
