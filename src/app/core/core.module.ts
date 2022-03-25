@@ -1,4 +1,5 @@
 import { InjectionToken, NgModule } from '@angular/core';
+import { StoreModule } from '@ngrx/store';
 import { SharedBudleModule } from '../shared/shared.module';
 import { ComponentComponent } from './components/comp.component';
 import { CoreRoutingModule } from './core-routing.module';
@@ -11,6 +12,7 @@ import { DetectionComponent } from './detection/detection.component';
 import { DirectivesDisplayComponent } from './directives/directives.component';
 import { HighLightDirective } from './directives/highlight/highlight.dir';
 import { UnlessDirective } from './directives/ngunless/unless.dir';
+import { homeReducer } from './home/store/home.reducer';
 import { ADDRESS2_CONFIG_TOKEN, ADDRESS_CONFIG_TOKEN, USER_CONFIG_TOKEN } from './injection-tokens';
 import { NgIfComponent } from './ngif/ngif.component';
 import { NgStyleComponent } from './ngstyle/ngstyle.component';
@@ -42,7 +44,8 @@ import { ViewChildComponent } from './viewchild/viewchild.component';
 @NgModule({
   imports: [
     CoreRoutingModule,
-    SharedBudleModule
+    SharedBudleModule,
+    StoreModule.forFeature('home', homeReducer)
   ],
   exports: [],
   declarations: [
