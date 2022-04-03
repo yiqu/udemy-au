@@ -1,5 +1,20 @@
-<div fxLayout="column" fxLayoutAlign="start start" class="parent">
+<div fxLayout="column" fxLayoutAlign="start start" class="parent w-100" fxLayoutGap="20px">
   <div fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="5px" class="w-100">
     Reactive Forms
+  </div>
+
+  <div>
+    Uploading files:
+  </div>
+
+  <div>
+    <input class="upload-input" type="file" multiple #uploadInput
+      (change)="onUploadFileChange($event)">
+    <mat-form-field class="" appearance="standard">
+      <input matInput type="text" [disabled]="true">
+      <button matSuffix mat-icon-button aria-label="Clear" (click)="onUploadClick()">
+        <mat-icon>attach_file</mat-icon>
+      </button>
+    </mat-form-field>
   </div>
 </div>

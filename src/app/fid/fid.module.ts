@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { SharedBudleModule } from '../shared/shared.module';
 import { FideRoutingModule } from './fid-routing.module';
 import { FormsInDepthComponent } from './fid.component';
+import { FidReactiveComponent } from './reactive/reactive.component';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { FormsInDepthComponent } from './fid.component';
   exports: [],
 
   declarations: [
-    FormsInDepthComponent
+    FormsInDepthComponent,
+    FidReactiveComponent
   ],
 
   providers: [],
