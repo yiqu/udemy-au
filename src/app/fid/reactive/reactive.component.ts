@@ -1,6 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { createFormControl2 } from 'src/app/shared/general.utils';
+import { FileUploadService } from '../fid.service';
 
 @Component({
   selector: 'app-fid-reactive',
@@ -13,7 +14,7 @@ export class FidReactiveComponent implements OnInit {
   uploadInput?: ElementRef;
 
 
-  constructor() {
+  constructor(public fs: FileUploadService) {
   }
 
   ngOnInit() {
@@ -21,7 +22,13 @@ export class FidReactiveComponent implements OnInit {
 
   onUploadFileChange(uploadEvent: any) {
     const files: FileList = uploadEvent.target?.files;
-    console.log(files)
+    if (files) {
+      const clonedFiles = { ...files };
+      const fileIndexArr = Object.keys(clonedFiles);
+      fileIndexArr.forEach((index: any) => {
+        this.fs.attachFile(clonedFiles[index], new Date().getTime() + index + '');
+      });
+    }
   }
 
   onUploadClick() {
