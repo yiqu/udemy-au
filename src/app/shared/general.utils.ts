@@ -117,3 +117,38 @@ export interface FormValidationErrorDisplay {
   summary: string;
   errors: AllValidationErrors[];
 }
+
+export function removeEmptyFromObject(obj: any): any {
+  if (!obj) {
+    return {}; 
+  }
+  const result = JSON.parse(JSON.stringify(obj));
+  Object.keys(result).forEach((key) => {
+    if (result[key] === null || result[key] === undefined) {
+      delete result[key];
+    }
+  });
+  return result;
+}
+
+export function isObjectEmpty(obj: any): boolean {
+  if (obj) {
+    const keys = Object.keys(obj);
+    return keys.length < 1;
+  }
+  return false;
+}
+
+// Remove objects in an array if the object has the same value by key provided
+export function deduplicateObjectArrayByKey(obj: any, key: string): any[] {
+  if (arr && arr.length > 0) {
+    const uniqueByValues: any[] = arr.map((res) => res[key]);
+    const filtered = arr.filter((res, index) => {
+      return !uniqueByValues.includes(res[key], index + 1);
+    });
+    return filtered;
+  }
+  return [];
+}
+
+
