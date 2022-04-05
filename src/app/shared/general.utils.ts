@@ -142,8 +142,8 @@ export function isObjectEmpty(obj: any): boolean {
 // Remove objects in an array if the object has the same value by key provided
 export function deduplicateObjectArrayByKey<T>(arr: T[], key: string): T[] {
   if (arr && arr.length > 0) {
-    const uniqueByValues: any[] = arr.map((res) => res[key]);
-    const filtered = arr.filter((res, index) => {
+    const uniqueByValues: any[] = arr.map((res: T) => res[key]);
+    const filtered = arr.filter((res: T, index: number) => {
       return !uniqueByValues.includes(res[key], index + 1);
     });
     return filtered;
