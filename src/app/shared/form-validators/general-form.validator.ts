@@ -115,3 +115,38 @@ export function alphaNumericValidator(control: FormControl): {[s: string]: boole
   }
   return {"alphanumericOnly": true};
 }
+
+export function noSpaceAllowedValidator(control: FormControl): {[s: string]: boolean} | undefined {
+  const val: any = control.value;
+  if (val && (!('' + val).includes(' '))) {
+    return undefined;
+  }
+  return { hasSpaceCharacter: true };
+}
+
+export function trimmedStringMinCountValidator(count: number) {
+  return (control: FormControl): {[s: string]: boolean} | undefined => {
+    const val: any = control.value;
+    if (val) {
+      const charCount = ('' + val).trim().length;
+      if (charCount < count) {
+        return { minCharCount: true };
+      }
+      return undefined;
+    }
+    return { minCharCount: true };
+  }
+}
+
+export function stringMatchInputValidator(toMatch: string) {
+  return (control: FormControl): {[s: string]: boolean} | undefined => {
+    const val: any = control.value;
+    if (val) {
+      if (val !== toMatch) {
+        return { inputStringNoMatch: true };
+      }
+      return undefined;
+    }
+    return { inputStringNoMatch: true };
+  }
+}
