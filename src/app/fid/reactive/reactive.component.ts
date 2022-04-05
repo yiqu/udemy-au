@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { createFormControl2 } from 'src/app/shared/general.utils';
@@ -14,7 +15,7 @@ export class FidReactiveComponent implements OnInit {
   uploadInput?: ElementRef;
 
 
-  constructor(public fs: FileUploadService) {
+  constructor(public fs: FileUploadService, private http: HttpClient) {
   }
 
   ngOnInit() {
@@ -23,10 +24,9 @@ export class FidReactiveComponent implements OnInit {
   onUploadFileChange(uploadEvent: any) {
     const files: FileList = uploadEvent.target?.files;
     if (files) {
-      const clonedFiles = { ...files };
-      const fileIndexArr = Object.keys(clonedFiles);
+      const fileIndexArr = Object.keys(files);
       fileIndexArr.forEach((index: any) => {
-        this.fs.attachFile(clonedFiles[index], new Date().getTime() + index + '');
+        this.fs.attachFile(files[index], new Date().getTime() + index + '');
       });
     }
   }

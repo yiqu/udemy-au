@@ -6,7 +6,7 @@ export interface UploadFile {
   attachDate: number;
   dateModified: number;
   fileSize: number;
-  progress?: number;
+  progress: number;
   completed?: boolean;
   file: File;
 }

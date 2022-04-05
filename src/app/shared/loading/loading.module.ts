@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModuleBundle } from '../material-bundle';
 import { LoadingBarComponent } from '../loading-bar/loading-bar.component';
+import { LoadingProgressComponent } from '../loading-spinner/loading-spinner.component';
 
 @NgModule({
   imports: [
@@ -15,12 +16,14 @@ import { LoadingBarComponent } from '../loading-bar/loading-bar.component';
 
   exports: [
     LoadingComponent,
-    LoadingBarComponent
+    LoadingBarComponent,
+    LoadingProgressComponent
   ],
 
   declarations: [
     LoadingComponent,
-    LoadingBarComponent
+    LoadingBarComponent,
+    LoadingProgressComponent
   ],
 
   providers: [

@@ -22,8 +22,8 @@ export const adapter = createEntityAdapter<UploadFile>({
   sortComparer: comparator
 })
 
-export const inititalState = adapter.getInitialState({
-  uploading: false,
+export const inititalState = adapter.getInitialState<Partial<FileUploadEntityState>>({
+  uploading: false
 });
 
 
@@ -37,10 +37,37 @@ export const fileUploadEntityReducer = createReducer(
       file: file,
       fileName: file.name,
       fileSize: file.size,
-      id: fileId
+      id: fileId,
+      completed: false,
+      progress: 0
     };
-    console.log(fileToAdd)
     return adapter.addOne(fileToAdd, {
+      ...state,
+      loading: true
+    });
+  }),
+
+  on(fromUploadActions.uploadFileUpdateProgress, (state, { fileId, progress }) => {
+    const updatedProgress: Update<UploadFile> = {
+      id: fileId,
+      changes: {
+        progress
+      }
+    };
+    return adapter.updateOne(updatedProgress, {
+      ...state,
+      loading: true
+    });
+  }),
+
+  on(fromUploadActions.uploadFileSuccess, (state, { fileId }) => {
+    const updatedProgress: Update<UploadFile> = {
+      id: fileId,
+      changes: {
+        completed: true
+      }
+    };
+    return adapter.updateOne(updatedProgress, {
       ...state,
       loading: true
     });

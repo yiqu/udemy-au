@@ -17,7 +17,7 @@ import { LoadingBarCssComponent } from './components/loading-bar-css/loading-bar
     DialogConfirmComponent,
     EnterEscapeKeyEventDirective,
     SharedDropMenuComponent,
-    LoadingBarCssComponent
+    LoadingBarCssComponent,
   ],
 
   imports: [

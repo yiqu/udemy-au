@@ -4,7 +4,7 @@
   </div>
 
   <div>
-    Uploading files:
+    Select files to upload
   </div>
 
   <div>
@@ -13,8 +13,42 @@
     <mat-form-field class="" appearance="standard">
       <input matInput type="text" [disabled]="true">
       <button matSuffix mat-icon-button aria-label="Clear" (click)="onUploadClick()">
-        <mat-icon>attach_file</mat-icon>
+        <mat-icon>file_upload</mat-icon>
       </button>
     </mat-form-field>
+  </div>
+
+  <div>
+    <ng-container *ngIf="(this.fs.filesUploadingAll$ | async) as allFiles">
+      <ng-container *ngIf="allFiles.length > 0">
+        <div>
+          {{allFiles.length}} files uploading...
+        </div>
+      </ng-container>
+      <ng-container *ngFor="let file of allFiles">
+        <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="15px">
+          <div>
+            <ng-container *ngIf="!file.completed; else done">
+              <shared-progress-spinner [progress]="file.progress" [mode]="'determinate'"
+              [diameter]="30"></shared-progress-spinner>
+            </ng-container>
+          </div>
+          <ng-template #done>
+            <div fxLayout="row" fxLayoutAlign="center center">
+              <mat-icon>cloud_done</mat-icon>
+            </div>
+          </ng-template>
+          <div>
+            {{file.fileName}}
+          </div>
+          <div>
+            {{file.fileSize}}
+          </div>
+          <div>
+            {{file.progress}}%
+          </div>
+        </div>
+      </ng-container>
+    </ng-container>
   </div>
 </div>
