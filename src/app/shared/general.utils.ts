@@ -120,7 +120,7 @@ export interface FormValidationErrorDisplay {
 
 export function removeEmptyFromObject(obj: any): any {
   if (!obj) {
-    return {}; 
+    return {};
   }
   const result = JSON.parse(JSON.stringify(obj));
   Object.keys(result).forEach((key) => {
@@ -142,9 +142,9 @@ export function isObjectEmpty(obj: any): boolean {
 // Remove objects in an array if the object has the same value by key provided
 export function deduplicateObjectArrayByKey<T>(arr: T[], key: string): T[] {
   if (arr && arr.length > 0) {
-    const uniqueByValues: any[] = arr.map((res: T) => res[key]);
+    const uniqueByValues: any[] = arr.map((res: T) => res[key as keyof T]);
     const filtered = arr.filter((res: T, index: number) => {
-      return !uniqueByValues.includes(res[key], index + 1);
+      return !uniqueByValues.includes(res[key as keyof T], index + 1);
     });
     return filtered;
   }

@@ -1,4 +1,4 @@
-import { FormControl, ValidatorFn } from '@angular/forms';
+import { AbstractControl, FormControl, ValidationErrors, ValidatorFn } from '@angular/forms';
 
 export function customRequiredValidator(control: FormControl): {[s: string]: boolean} | undefined {
   const val: any = control.value;
@@ -125,27 +125,27 @@ export function noSpaceAllowedValidator(control: FormControl): {[s: string]: boo
 }
 
 export function trimmedStringMinCountValidator(count: number): ValidatorFn {
-  return (control: FormControl): {[s: string]: boolean} | undefined => {
+  return (control: AbstractControl): ValidationErrors | null => {
     const val: any = control.value;
     if (val) {
       const charCount = ('' + val).trim().length;
       if (charCount < count) {
         return { minCharCount: true };
       }
-      return undefined;
+      return null;
     }
     return { minCharCount: true };
   }
 }
 
 export function stringMatchInputValidator(toMatch: string): ValidatorFn {
-  return (control: FormControl): {[s: string]: boolean} | undefined => {
+  return (control: AbstractControl): ValidationErrors | null => {
     const val: any = control.value;
     if (val) {
       if (val !== toMatch) {
         return { inputStringNoMatch: true };
       }
-      return undefined;
+      return null;
     }
     return { inputStringNoMatch: true };
   }
